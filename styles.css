@@ -1,0 +1,34 @@
+body{
+    background-color: azure;
+     
+}
+h2{
+    font-size: 2em;
+
+}
+#form form{
+    margin: 50px;
+}
+#form{
+    background-color: lightslategrey;
+    font-size: 1em; 
+    border: solid;
+    margin: 100px;
+    text-align: center;
+}
+#weatherResults{
+    background-color: lightslategrey;
+    border: solid;
+   text-align: center;
+   font-size: 2em;
+   margin: 100px;
+   text-align: center;
+}
+#forecastResults{
+    background-color: lightslategrey;
+    margin-top: 100px;
+    text-align: center;
+    margin: 100px;
+    border: solid;
+    text-align: center;
+}

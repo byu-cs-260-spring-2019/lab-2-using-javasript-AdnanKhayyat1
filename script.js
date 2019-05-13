@@ -1,4 +1,5 @@
 document.getElementById("weatherSubmit").addEventListener("click", function(event) {
+    try{
     event.preventDefault();
     const value = document.getElementById("weatherInput").value;
     if (value === "")
@@ -31,17 +32,22 @@ document.getElementById("weatherSubmit").addEventListener("click", function(even
       .then(function(response) {
         return response.json();
       }).then(function(JSON) {
-        let forecast = "";
+        let forecast = "<h1>Forecast:</h1><br>";
         for (let i=0; i < JSON.list.length; i++) {
             forecast += "<h2>" + moment(JSON.list[i].dt_txt).format('MMMM Do YYYY, h:mm:ss a') + "</h2>";
             forecast += "<p>Temperature: " + JSON.list[i].main.temp + "</p>";
-            forecast += '<img src="http://openweathermap.org/img/w/' + JSON.list[i].weather[0].icon + '.png"/>'
-        }
+            forecast += '<img src="http://openweathermap.org/img/w/' + JSON.list[i].weather[0].icon + '.png"/>';
+ 
+    }
         document.getElementById("forecastResults").innerHTML = forecast;
       });
   
 
-    
+    }
+    catch(err){
+        document.getElementById("weatherResults").innerHTML = "<h1>Something wrong has occured!</h1>";
+
+    }
   });
 
   
